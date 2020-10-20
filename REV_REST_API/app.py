@@ -10,9 +10,9 @@ wsgi_app = app.wsgi_app
 
 
 @app.route('/reversed/<string:string_to_reverse>', methods=['GET'])
-def hello(string_to_reverse: str):
+def reverse(string_to_reverse: str):
     """Renders a sample page."""
-    return jsonify({"id": "elem"})
+    return jsonify({"reversed_string": f"{string_to_reverse[::-1]}"})
 
 if __name__ == '__main__':
     import os
